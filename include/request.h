@@ -3,6 +3,7 @@
 
 // Dependencies
 
+#include <stdio.h>
 #include <teeny/header.h>
 
 // Definitions
@@ -19,7 +20,7 @@
 typedef struct teeny_request_t_ {
     char *method, *path, *version;
     teeny_header_t *first_header;
-    char *content;
+    FILE *content;
 } teeny_request_t;
 
 // Public API
@@ -32,11 +33,10 @@ char            * teeny_request_get_version      (teeny_request_t *request);
 teeny_header_t  * teeny_request_get_headers      (teeny_request_t *request);
 teeny_header_t  * teeny_request_get_header       (teeny_request_t *request, const char *name);
 char            * teeny_request_get_header_value (teeny_request_t *request, const char *name);
-char            * teeny_request_get_content      (teeny_request_t *request);
-char            * teeny_request_set_method       (teeny_request_t *request, const char *method);
-char            * teeny_request_set_path         (teeny_request_t *request, const char *path);
-char            * teeny_request_set_version      (teeny_request_t *request, const char *version);
-teeny_header_t  * teeny_request_add_header       (teeny_request_t *request, const char *name, const char *value);
-teeny_header_t  * teeny_request_delete_header    (teeny_request_t *request, const char *name);
-char            * teeny_request_set_content      (teeny_request_t *request, const char *content);
-
+FILE            * teeny_request_get_content      (teeny_request_t *request);
+void              teeny_request_set_method       (teeny_request_t *request, const char *method);
+void              teeny_request_set_path         (teeny_request_t *request, const char *path);
+void              teeny_request_set_version      (teeny_request_t *request, const char *version);
+void              teeny_request_add_header       (teeny_request_t *request, const char *name, const char *value);
+void              teeny_request_delete_header    (teeny_request_t *request, const char *name);
+void              teeny_request_set_content      (teeny_request_t *request, FILE *content);
