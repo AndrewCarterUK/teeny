@@ -40,3 +40,6 @@ void              teeny_request_set_version      (teeny_request_t *request, cons
 void              teeny_request_add_header       (teeny_request_t *request, const char *name, const char *value);
 void              teeny_request_delete_header    (teeny_request_t *request, const char *name);
 void              teeny_request_set_content      (teeny_request_t *request, FILE *content);
+
+#endif
+
