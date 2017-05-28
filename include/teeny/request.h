@@ -27,19 +27,18 @@ typedef struct teeny_request_t_ {
 
 teeny_request_t * teeny_request_create           ();
 void              teeny_request_destroy          (teeny_request_t *request);
-char            * teeny_request_get_method       (teeny_request_t *request);
-char            * teeny_request_get_path         (teeny_request_t *request);
-char            * teeny_request_get_version      (teeny_request_t *request);
+const char      * teeny_request_get_method       (teeny_request_t *request);
+const char      * teeny_request_get_path         (teeny_request_t *request);
+const char      * teeny_request_get_version      (teeny_request_t *request);
 teeny_header_t  * teeny_request_get_headers      (teeny_request_t *request);
 teeny_header_t  * teeny_request_get_header       (teeny_request_t *request, const char *name);
-char            * teeny_request_get_header_value (teeny_request_t *request, const char *name);
+const char      * teeny_request_get_header_value (teeny_request_t *request, const char *name);
 FILE            * teeny_request_get_content      (teeny_request_t *request);
 void              teeny_request_set_method       (teeny_request_t *request, const char *method);
 void              teeny_request_set_path         (teeny_request_t *request, const char *path);
 void              teeny_request_set_version      (teeny_request_t *request, const char *version);
-void              teeny_request_add_header       (teeny_request_t *request, const char *name, const char *value);
+teeny_header_t *  teeny_request_add_header       (teeny_request_t *request, const char *name, const char *value);
 void              teeny_request_delete_header    (teeny_request_t *request, const char *name);
 void              teeny_request_set_content      (teeny_request_t *request, FILE *content);
 
 #endif
-

@@ -17,13 +17,13 @@ typedef struct teeny_response_t_ {
 
 teeny_response_t * teeny_response_create            ();
 void               teeny_response_destroy           (teeny_response_t *response);
-char             * teeny_response_get_version       (teeny_response_t *response);
-char             * teeny_response_get_status_code   (teeny_response_t *response);
-char             * teeny_response_get_reason_phrase (teeny_response_t *response);
+const char       * teeny_response_get_version       (teeny_response_t *response);
+const char       * teeny_response_get_status_code   (teeny_response_t *response);
+const char       * teeny_response_get_reason_phrase (teeny_response_t *response);
 teeny_header_t   * teeny_response_get_headers       (teeny_response_t *response);
 teeny_header_t   * teeny_response_get_header        (teeny_response_t *response, const char *name);
-char             * teeny_response_get_header_value  (teeny_response_t *response, const char *name);
-char             * teeny_response_get_content       (teeny_response_t *response);
+const char       * teeny_response_get_header_value  (teeny_response_t *response, const char *name);
+const char       * teeny_response_get_content       (teeny_response_t *response);
 void               teeny_response_set_version       (teeny_response_t *response, const char *version);
 void               teeny_response_set_status_code   (teeny_response_t *response, const char *status_code);
 void               teeny_response_set_reason_phrase (teeny_response_t *response, const char *reason_phrase);
@@ -33,4 +33,3 @@ void               teeny_response_set               (teeny_response_t *response,
 void               teeny_response_set_f             (teeny_response_t *response, const char *format, ...);
 
 #endif
-

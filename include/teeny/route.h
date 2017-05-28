@@ -28,4 +28,3 @@ typedef struct teeny_match_t_ {
 teeny_route_t * teeny_route_create  (int method_flags, const char *route_pattern, teeny_action_t *action);
 void            teeny_route_destroy (teeny_route_t *route);
 teeny_match_t * teeny_route_match   (teeny_route_t *route, teeny_request_t *request);
-
